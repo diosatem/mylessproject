@@ -23,7 +23,6 @@
   font-weight: normal;
   font-style: normal;
   font-display: swap;
-  font-stretch: expanded;
 }
 
 @font-face {
@@ -111,6 +110,8 @@ h2,
 h3,
 h4 {
   font-family: @header-font;
+  font-weight: normal;
+  //font-stretch: ultra-expanded;
 }
 
 // Header
@@ -246,7 +247,7 @@ header {
         right: -18px;
         top: 3px;
 
-        h1 {
+        h2 {
           font-size: @font-size + 0.4;
         }
 
@@ -275,7 +276,7 @@ header {
     .flex-row;
     align-items: center;
     justify-content: flex-start;
-    gap: 45px;
+    gap: 40px;
     font-family: @header-font;
     padding-left: 25px;
     position: relative;
@@ -311,14 +312,18 @@ header {
     }
   }
 
+  li:nth-of-type(2) {
+    padding-right: 15px;
+  }
+
   // Drop-down menu
   .drop-button {
     padding: 30px 0;
   }
   .arrow-down {
     filter: brightness(0.5);
-    vertical-align: baseline;
-    margin-left: 10px;
+    vertical-align: middle;
+    margin-left: 13px;
     cursor: pointer;
   }
 
@@ -377,9 +382,8 @@ header {
       }
     }
 
-    .shop-category a:hover {
-      background-color: @accent1;
-      padding: 5px;
+    .shop-category div div a:hover {
+      color: @accent1;
     }
 
     &:hover .shop-category {
@@ -446,6 +450,10 @@ header {
       .hero-button-size;
       background-color: transparent;
       border: 1px solid @base-color;
+    }
+
+    & a div:hover {
+      background-color: fade(@base-color, 20%);
     }
   }
 }
@@ -673,10 +681,6 @@ header {
 
   a:hover {
     color: @accent1;
-  }
-
-  p {
-    color: fade(@secondary-color, 40%);
   }
 }
 
